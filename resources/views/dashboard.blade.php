@@ -120,24 +120,24 @@
             <ul>
                 @auth
                 <!-- User is authenticated -->
-                <li><a href="#">Profile</a>
+                <li><a href="">Profile</a>
                     <div class="subMenu">
                         <ul>
-                            <li><a href="#">Profile</a></li>
+                            <li><a href="{{route('dashboard.profile')}}">Prof</a></li>
                             <li><a href="#">Messages</a></li>
                             <li><a href="{{ route ('adverts.index') }}">My adverts</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Boost account</a></li>
-                            <li><a href="{{ route('logout') }}">Log out</a></li>
+                            <li><a href="{{route('logout')}}">Log out</a></li>
                         </ul>
                     </div>
                 </li>
                 @else
                 <!-- User is not authenticated -->
-                <li><a href="#">Profile</a>
+                <li><a href="">Profile</a>
                     <div class="subMenu">
                         <ul>
-                            <li><a href="/signin">Sign up</a></li>
+                            <li><a href="signin">Sign up</a></li>
                             <li><a href="login">Log in</a></li>
                         </ul>
                     </div>
