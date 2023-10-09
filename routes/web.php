@@ -34,7 +34,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::group(['middleware' => ['auth']], function(){
-    Route::get('/dashboard', [DashboardController::class, 'home'])->name('dashboard');
-    Route::get('/dashboard/profile', [DashController::class, 'profile'])->name('dashboard.profile');
-});
+Route::get('/dashboard/profile', [DashController::class, 'profile'])->name('dashboard.profile');

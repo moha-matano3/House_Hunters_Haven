@@ -42,10 +42,10 @@
                 <img src="" class="img-raised rounded-circle img-fluid">
             </div>
             <div>
-                <input type="text" name="username" value="{{$user->username}}">
+                <label>Username:</label><input type="text" name="username" value="">
             </div>
             <div>
-                <input type="text" name="email" value="{{$user->email}}">
+            <label>Email:</label><input type="text" name="email" value="">
             </div>
             <div>
                 <input type="submit" name="update" value="Update">

@@ -128,7 +128,7 @@
                             <li><a href="#">My adverts</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Boost account</a></li>
-                            <li><a href="{{ route('logout') }}">Log out</a></li>
+                            <li><a href="{{route('logout')}}">Log out</a></li>
                         </ul>
                     </div>
                 </li>
