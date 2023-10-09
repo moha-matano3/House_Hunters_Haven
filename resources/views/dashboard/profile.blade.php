@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+@extends('layouts.app')
+
+@section('styles')
     <style>
         .success{
             background-color: green;
@@ -24,8 +20,9 @@
             height: auto;
         }
     </style>
-</head>
-<body>
+@endsection
+
+
     @section('message')
         @if (session('success'))
             <div class="success">
@@ -33,7 +30,7 @@
             </div>
         @endif
     @endsection
-    @section('dashboard-content')
+    @section('content')
         <h1>Bio Data.</h1>
         <form action="" method="POST">
             @csrf
@@ -53,5 +50,4 @@
         </form>
         <h1>More info.</h1>
     @endsection
-</body>
-</html>
+
