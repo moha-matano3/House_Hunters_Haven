@@ -19,7 +19,7 @@ class LoginController extends Controller
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
             session()->regenerate();
 
-            return redirect('/')->with('success','You are logged in');
+            return redirect('dashboard')->with('success','You are logged in');
         }
         else{
             return back()->with('error','Invalid email & password!');
