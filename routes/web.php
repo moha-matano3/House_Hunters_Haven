@@ -20,6 +20,9 @@ Route::post('/signup', [UserController::class, 'store'])->name('signup');
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/log-in', [LoginController::class, 'login'])->name('login');
 
+//logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::get('/', function () {
     return view('home');
 });

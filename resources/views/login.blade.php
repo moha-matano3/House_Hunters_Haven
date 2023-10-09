@@ -71,7 +71,7 @@
             @enderror
             <br><br>
             <input class="submit" type="submit" name="signin" value="Log in"><br><br>
-            <p>New to House Hunters' Haven? Please sign in by clicking<a href="/signin"> HERE</a></p>
+            <p>New to House Hunters' Haven? Please sign up by clicking<a href="/signin"> HERE</a></p>
         </form>
     </div>
 </body>
