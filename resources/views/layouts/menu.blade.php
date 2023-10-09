@@ -46,14 +46,31 @@
         </li>
         <li><input type="text" placeholder="Enter Property name or location"> <input type="submit" value="Search"></li>
         <ul>
-            <li><a href="">Profile</a>
+            @auth
+            <!-- User is authenticated -->
+            <li><a href="#">Profile</a>
                 <div class="subMenu">
                     <ul>
-                        <li><a href="signin">Sign up</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">My adverts</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Boost account</a></li>
+                        <li><a href="{{ route('logout') }}">Log out</a></li>
+                    </ul>
+                </div>
+            </li>
+            @else
+            <!-- User is not authenticated -->
+            <li><a href="#">Profile</a>
+                <div class="subMenu">
+                    <ul>
+                        <li><a href="/signin">Sign up</a></li>
                         <li><a href="login">Log in</a></li>
                     </ul>
                 </div>
             </li>
+            @endauth
         </ul>
         
     </ul>
