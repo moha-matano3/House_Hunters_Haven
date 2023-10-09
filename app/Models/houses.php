@@ -16,9 +16,11 @@ class houses extends Model
         'size',
         'bedrooms',
         'amenities',
+        'location',
+        'price'
     ];
 
     public function users(){
-        return $this->belongsToMany(Users::class);
+        return $this->belongsTo(Users::class);
     }
 }

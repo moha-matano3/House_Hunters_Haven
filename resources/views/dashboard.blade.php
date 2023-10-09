@@ -125,7 +125,7 @@
                         <ul>
                             <li><a href="{{route('dashboard.profile')}}">Prof</a></li>
                             <li><a href="#">Messages</a></li>
-                            <li><a href="#">My adverts</a></li>
+                            <li><a href="{{ route ('adverts.index') }}">My adverts</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Boost account</a></li>
                             <li><a href="{{route('logout')}}">Log out</a></li>
