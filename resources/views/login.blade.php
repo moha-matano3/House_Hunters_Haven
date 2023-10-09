@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HHH log in</title>
 
     <style>
         body{
@@ -59,17 +53,25 @@
             color: #fff;
         }
     </style>
-</head>
+
 <body>
 <div class="titleHome"><h1><a href="/">House Hunters' Haven</a></h1></div>
     <div class="login-Form">
         <h2>Log In</h2>
-        <form action="" method="">
-            <label>Email:</label><input type="email" name="email" placeholder=" Enter your Email"><br><br>
-            <label>Password:</label><input type="password" name="password" placeholder=" Enter your Password"><br><br>
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
+            <label>Email:</label><input type="email" name="email" placeholder=" Enter your Email">
+            @error('email')
+              <p class="text-danger">{{$message}}</p>
+            @enderror
+            <br><br>
+            <label>Password:</label><input type="password" name="password" placeholder=" Enter your Password">
+            @error('password')
+            <p class="text-danger">{{$message}}</p>
+            @enderror
+            <br><br>
             <input class="submit" type="submit" name="signin" value="Log in"><br><br>
             <p>New to House Hunters' Haven? Please sign in by clicking<a href="/signin"> HERE</a></p>
         </form>
     </div>
 </body>
-</html>
