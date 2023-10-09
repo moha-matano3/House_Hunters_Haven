@@ -32,15 +32,10 @@ Route::get('/adverts/edit/{id}', [AddsController::class, 'edit'])->name('adverts
 Route::delete('/adverts/destroy/{id}', [AddsController::class, 'destroy'])->name('adverts.destroy');
 Route::put('/adverts/update{id}', [AddsController::class, 'update'])->name('adverts.update');
 
-
-
-
-
 Route::get('/', function () {
     return view('home');
 });
  
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
