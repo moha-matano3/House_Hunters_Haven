@@ -49,6 +49,6 @@ class User extends Authenticatable
     ];
 
     public function houses(){
-        return $this->belongsToMany(houses::class);
+        return $this->hasMany(houses::class);
     }
 }

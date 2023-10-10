@@ -20,9 +20,16 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="location">Location:</label>
-            <input type="text" name="location" class="form-control">
-            @error('location')
+            <label for="town">Town:</label>
+            <input type="text" name="town" class="form-control">
+            @error('town')
+            <p class="text-danger">{{$message}}</p>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="location">County:</label>
+            <input type="text" name="county" class="form-control">
+            @error('county')
             <p class="text-danger">{{$message}}</p>
             @enderror
         </div>

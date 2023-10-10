@@ -33,12 +33,12 @@ class AddsController extends Controller
          $request->validate([
             'house_name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'location' => 'required|string|max:255',
+            'town' => 'required|string|max:255',
+            'county' => 'required|string|max:255',
             'image' => 'required', 
             'bedrooms' => 'required|integer',
             'size' => 'required|numeric',
             'amenities' => 'required|string|max:255',
-           // 'bedrooms' => 'required|numeric',
          
         ]);
        
@@ -49,7 +49,8 @@ class AddsController extends Controller
         $house->house_img = $image_path;
         $house->house_name = $request->house_name;
         $house->price = $request->price;
-        $house->location = $request->location;
+        $house->town = $request->town;
+        $house->county = $request->county;
         $house->size = $request->size;
         $house->amenities = $request->amenities;
         $house->bedrooms = $request->bedrooms;
@@ -60,34 +61,34 @@ class AddsController extends Controller
     }
     
     public function update(Request $request, $id)
-{
-    $validatedData= $request->validate([
+    {
+        $validatedData= $request->validate([
         'house_name' => 'required|string|max:255',
         'price' => 'required|numeric',
         'image' => 'sometimes|required', 
         'amenities' => 'required|string|max:255',
      
-    ]);
+        ]);
 
-    // Find the house to be updated
-    $house = houses::find($id);
+        // Find the house to be updated
+        $house = houses::find($id);
 
-    // Update the house with the validated data
-    $house->update($validatedData);
+        // Update the house with the validated data
+        $house->update($validatedData);
 
-    return redirect()->route('adverts.index')->with('success', 'House updated successfully');
-}
+        return redirect()->route('adverts.index')->with('success', 'House updated successfully');
+    }
 
 
     public function destroy($id)
-{
-    // Find the house to be deleted
-    $house = houses::find($id);
+    {
+        // Find the house to be deleted
+        $house = houses::find($id);
 
-    // Delete the house
-    $house->delete();
+        // Delete the house
+        $house->delete();
 
-    return redirect()->route('adverts.index')->with('success', 'House deleted successfully');
-}
+        return redirect()->route('adverts.index')->with('success', 'House deleted successfully');
+    }
 
 }

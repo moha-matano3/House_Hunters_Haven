@@ -123,7 +123,7 @@
                 <li><a href="">Profile</a>
                     <div class="subMenu">
                         <ul>
-                            <li><a href="{{route('dashboard.profile')}}">Prof</a></li>
+                            <li><a href="{{route('dashboard.profile.prof')}}">Prof</a></li>
                             <li><a href="#">Messages</a></li>
                             <li><a href="{{ route ('adverts.index') }}">My adverts</a></li>
                             <li><a href="#">Settings</a></li>
