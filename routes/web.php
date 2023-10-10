@@ -34,9 +34,12 @@ Route::delete('/adverts/destroy/{id}', [AddsController::class, 'destroy'])->name
 Route::put('/adverts/update{id}', [AddsController::class, 'update'])->name('adverts.update');
 
 //profile
-Route::get('/profile/prof', [ProfController::class, 'prof'])->name('dashboard.profile.prof');
+Route::get('/profile/prof', [ProfController::class, 'profile'])->name('dashboard.profile.prof');
+Route::get('/profile/edit/{id}', [ProfController::class, 'edit'])->name('dashboard.profile.edit');
+Route::patch('/profile/update/{id}', [ProfController::class, 'update'])->name('dashboard.profile.update');
 Route::delete('/profile/prof/destroy/{id}', [ProfController::class, 'destroy'])->name('dashboard.profile.destroy');
-Route::patch('/profile/update{id}', [ProfController::class, 'update'])->name('dashboard.profile.update');
+
+
 
 
 

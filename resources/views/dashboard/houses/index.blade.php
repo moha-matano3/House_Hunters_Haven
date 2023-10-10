@@ -4,7 +4,7 @@
 <style>
     .house-tile {
         border: 1px solid #ddd;
-        padding: 115px;
+        padding: 15px;
         margin-bottom: 20px;
         text-align: center;
     }
@@ -43,14 +43,14 @@
         @foreach($houses as $house)
         <div class=" row">
             <div class="house-tile">
-                <img src="{{  $house->image_path }}" alt="{{ $house->title }}">
+                <img src="{{ asset('storage/' .  $house->house_img) }}" alt="{{ $house->title }}">
                 <h2>{{ $house->house_name }}</h2>
                 <p>Town: {{ $house->town }}</p>
                 <p>County: {{ $house->county }}</p>
                 <p>Bedrooms: {{ $house->bedrooms }}</p>
-                <p>Size: {{ $house->size }}</p>
+                <p>Size: {{ $house->size }} sqft</p>
                 <p>Amenities: {{ $house->amenities }}</p>
-                <p>Price: ${{ $house->price }}</p>
+                <p>Price: {{ $house->price }} ksh</p>
                 <div class="house-actions">
                     <a href="{{ route('adverts.edit', $house->id) }}" class="btn btn-info">Edit</a>
                     <form action="{{ route('adverts.destroy', $house->id) }}" method="POST" style="display: inline;">
