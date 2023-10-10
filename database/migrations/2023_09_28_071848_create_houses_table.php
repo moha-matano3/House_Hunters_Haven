@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->binary('house_img');
             $table->string('house_name');
+            $table->string('town');
+            $table->string('county');
             $table->string('size');
             $table->string('bedrooms');
             $table->string('amenities');
+            $table->integer('price');
             $table->timestamps();
         });
     }

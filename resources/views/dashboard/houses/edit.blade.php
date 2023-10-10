@@ -25,9 +25,17 @@
             </div>
         
             <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" name="location" class="form-control" value="{{ $house->location }}" disabled>
-                @error('location')
+                <label for="town">Town:</label>
+                <input type="text" name="town" class="form-control" value="{{ $house->town }}" disabled>
+                @error('town')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="county">County:</label>
+                <input type="text" name="county" class="form-control" value="{{ $house->county }}" disabled>
+                @error('county')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>

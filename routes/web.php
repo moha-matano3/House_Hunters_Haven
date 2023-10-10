@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashController;
+use App\Http\Controllers\AddsController;
+use App\Http\Controllers\ProfController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AddsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,16 @@ Route::get('/adverts/edit/{id}', [AddsController::class, 'edit'])->name('adverts
 Route::delete('/adverts/destroy/{id}', [AddsController::class, 'destroy'])->name('adverts.destroy');
 Route::put('/adverts/update{id}', [AddsController::class, 'update'])->name('adverts.update');
 
+//profile
+Route::get('/profile/prof', [ProfController::class, 'prof'])->name('dashboard.profile.prof');
+Route::delete('/profile/prof/destroy/{id}', [ProfController::class, 'destroy'])->name('dashboard.profile.destroy');
+Route::patch('/profile/update{id}', [ProfController::class, 'update'])->name('dashboard.profile.update');
+
+
+
+
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -42,4 +52,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/dashboard/profile', [DashController::class, 'profile'])->name('dashboard.profile');
+Route::get('/dashboard/profile', [ProfController::class, 'profile'])->name('dashboard.profile');
