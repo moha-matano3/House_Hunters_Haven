@@ -63,13 +63,41 @@
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-        
             <div class="form-group">
-                <label for="amenities">Amenities:</label>
-                <input type="text" name="amenities" class="form-control" value="{{ $house->amenities }}">
-                @error('amenities')
+                <label for="status">Status:</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="rent" {{ $house->status == 'rent' ? 'selected' : '' }}>Rent</option>
+                    <option value="sell" {{ $house->status == 'sell' ? 'selected' : '' }}>Sell</option>
+                </select>
+                @error('status')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
+            </div>
+        
+            <div class="form-group">
+                <label>Amenities:</label><br>
+                <input type="checkbox" id="is_gym" name="is_gym" value="1" @if($house->is_gym) checked @endif>
+                <label for="is_gym">Gym</label><br>
+              
+                <input type="checkbox" id="is_pool" name="is_pool" value="1" @if($house->is_pool) checked @endif>
+                <label for="is_pool">Pool</label><br>
+             
+                <input type="checkbox" id="is_security" name="is_security" value="1" @if($house->is_security) checked @endif>
+                <label for="is_security">Security</label><br>
+             
+                <input type="checkbox" id="is_parking" name="is_parking" value="1" @if($house->is_parking) checked @endif>
+                <label for="is_parking">Parking Space</label><br>
+               
+                <input type="checkbox" id="is_furnished" name="is_furnished" value="1" @if($house->is_furnished) checked @endif>
+                <label for="is_furnished">Fully Furnished</label><br>
+               
+                <input type="checkbox" id="is_gated" name="is_gated" value="1" @if($house->is_gated) checked @endif>
+                <label for="is_gated">Gated Community</label><br>
+              
+                <input type="checkbox" id="is_wifi" name="is_wifi" value="1" @if($house->is_wifi) checked @endif>
+                <label for="is_wifi">Wifi</label><br>
+               
+               
             </div>
         
             <!-- Add more form fields for other house attributes -->

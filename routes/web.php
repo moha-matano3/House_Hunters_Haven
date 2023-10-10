@@ -5,6 +5,7 @@ use App\Http\Controllers\AddsController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,7 @@ Route::get('/adverts/create', [AddsController::class, 'create'])->name('adverts.
 Route::post('/adverts/store', [AddsController::class, 'store'])->name('adverts.store');
 Route::get('/adverts/edit/{id}', [AddsController::class, 'edit'])->name('adverts.edit');
 Route::delete('/adverts/destroy/{id}', [AddsController::class, 'destroy'])->name('adverts.destroy');
-Route::put('/adverts/update{id}', [AddsController::class, 'update'])->name('adverts.update');
+Route::put('/adverts/update/{id}', [AddsController::class, 'update'])->name('adverts.update');
 
 //profile
 Route::get('/profile/prof', [ProfController::class, 'profile'])->name('dashboard.profile.prof');
@@ -39,7 +40,9 @@ Route::get('/profile/edit/{id}', [ProfController::class, 'edit'])->name('dashboa
 Route::patch('/profile/update/{id}', [ProfController::class, 'update'])->name('dashboard.profile.update');
 Route::delete('/profile/prof/destroy/{id}', [ProfController::class, 'destroy'])->name('dashboard.profile.destroy');
 
-
+//filter
+Route::get('search',[IndexController::class, 'search'])->name('search');
+Route::get('filter', [IndexController::class, 'filter'])->name('houses.filter');
 
 
 

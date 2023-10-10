@@ -16,7 +16,7 @@
 
 @section('background')
     <div>
-        <img src="{{URL('images/background.jpg')}}" alt="">
+        <img src="{{URL('images/background.jpg')}}" alt="" width="100%">
     </div>
 @endsection 
 </html>

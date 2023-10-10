@@ -40,6 +40,7 @@
     <h2>Houses</h2>
 
     <div class="row">
+        @if(count($houses)>0)
         @foreach($houses as $house)
         <div class=" row">
             <div class="house-tile">
@@ -49,7 +50,7 @@
                 <p>County: {{ $house->county }}</p>
                 <p>Bedrooms: {{ $house->bedrooms }}</p>
                 <p>Size: {{ $house->size }} sqft</p>
-                <p>Amenities: {{ $house->amenities }}</p>
+                <p>Status: {{ $house->status }} </p>
                 <p>Price: {{ $house->price }} ksh</p>
                 <div class="house-actions">
                     <a href="{{ route('adverts.edit', $house->id) }}" class="btn btn-info">Edit</a>
@@ -62,6 +63,9 @@
             </div>
         </div>
         @endforeach
+        @else
+        <p>No product found!</p>   
+      @endif 
     </div>
 </div>
 @endsection

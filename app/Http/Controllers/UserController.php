@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -39,6 +40,7 @@ class UserController extends Controller
             'telephone' => $request->telephone,
             'email' => $request->email,
             'user_img' => $image_path,
+            'user_code' => Str::random(20),
             'password' => Hash::make($request->password),
         ]);
         
