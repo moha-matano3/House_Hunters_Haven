@@ -68,12 +68,25 @@ class AddsController extends Controller
         'amenities' => 'required|string|max:255',
      
     ]);
-
+    
     // Find the house to be updated
     $house = houses::find($id);
 
+
     // Update the house with the validated data
-    $house->update($validatedData);
+    $house->update([
+        'house_name' => $validatedData['house_name'],
+        'price' => $validatedData['price'],
+        'amenities' => $validatedData['amenities'],
+        
+    ]);
+      // If a new image is provided, update the image path
+      if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('images', 'public');
+        $house->house_img = $imagePath;
+        $house->save();
+    }
+
 
     return redirect()->route('adverts.index')->with('success', 'House updated successfully');
 }
