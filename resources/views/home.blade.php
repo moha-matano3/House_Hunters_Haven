@@ -9,14 +9,14 @@
 @extends('layouts.app')
  
 @section('title')
- {{--}}   <div style="font-size: 50px; margin: 0; padding: 0; text-align: center; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);">
-        <h3><b>House Hunters' Haven</b></h3>
-    </div> --}}
+    <div style="color: #fff; font-size: 50px; margin: 0; padding: 0; text-align: center; position: absolute; top: 50%; left: 50%; transform: translateX(-50%);">
+        <h1><b>House Hunters' Haven</b></h1>
+    </div>
 @endsection
 
 @section('background')
     <div>
-        <img src="{{URL('images/background.jpg')}}" alt="" width="100%">
+        <img src="{{URL('images/best.jpg')}}" alt="" width="100%" height="100%">
     </div>
 @endsection 
 </html>

@@ -1,20 +1,31 @@
 @extends('layouts.app')
 
+<style>
+
+        .edit_form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 60px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
 @section('content')
-<div class="container">
-    <h1>Edit House</h1>
+<div class="edit_form">
+    <h1>Edit House</h1><br>
 
         <form action="{{ route('adverts.update', $house->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT') <!-- Use PUT method for updates -->
-        
             <div class="form-group">
                 <label for="house_name">House Name:</label>
                 <input type="text" name="house_name" class="form-control" value="{{ $house->house_name }}">
                 @error('house_name')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="price">Price:</label>
@@ -22,7 +33,7 @@
                 @error('price')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="town">Town:</label>
@@ -30,7 +41,7 @@
                 @error('town')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
 
             <div class="form-group">
                 <label for="county">County:</label>
@@ -38,7 +49,7 @@
                 @error('county')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="image">Image:</label>
@@ -46,7 +57,7 @@
                 @error('image')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="bedrooms">Bedrooms:</label>
@@ -54,7 +65,7 @@
                 @error('bedrooms')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="size">Size:</label>
@@ -62,17 +73,17 @@
                 @error('size')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
             <div class="form-group">
                 <label for="status">Status:</label>
                 <select name="status" id="status" class="form-control">
-                    <option value="rent" {{ $house->status == 'rent' ? 'selected' : '' }}>Rent</option>
-                    <option value="sell" {{ $house->status == 'sell' ? 'selected' : '' }}>Sell</option>
+                    <option value="Rent" {{ $house->status == 'rent' ? 'selected' : '' }}>Rent</option>
+                    <option value="Sell" {{ $house->status == 'sell' ? 'selected' : '' }}>Sell</option>
                 </select>
                 @error('status')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label>Amenities:</label><br>
@@ -98,7 +109,7 @@
                 <label for="is_wifi">Wifi</label><br>
                
                
-            </div>
+            </div><br>
         
             <!-- Add more form fields for other house attributes -->
         

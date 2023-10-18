@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('layouts.head')
 <body>
-   @include('layouts.menu')
+   @include('layouts.nav')
    @yield('content')
  
     @yield('title')

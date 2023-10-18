@@ -1,8 +1,25 @@
 @extends('layouts.app')
 
+<style>
+
+    .update_form {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        width: 400px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,.1);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+    }
+
+</style>
+
 @section('content')
-<div class="container">
-    <h1>Update Profile</h1>
+<div class="update_form">
+    <h1>Update Profile</h1><br><br>
         <form action="{{ route('dashboard.profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('patch')
@@ -13,7 +30,7 @@
                 @error('image')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="firstname">Firstname:</label>
@@ -21,7 +38,7 @@
                 @error('firstname')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="identification">ID no/ Passport:</label>
@@ -29,7 +46,7 @@
                 @error('identification')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -37,7 +54,7 @@
                 @error('username')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
 
             <div class="form-group">
                 <label for="telephone">Telephone:</label>
@@ -45,7 +62,7 @@
                 @error('telephone')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -53,7 +70,7 @@
                 @error('email')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -61,7 +78,7 @@
                 @error('password')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-            </div>
+            </div><br>
         
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

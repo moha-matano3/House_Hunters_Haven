@@ -21,6 +21,14 @@ return new class extends Migration
             $table->string('bedrooms');
             $table->string('amenities');
             $table->integer('price');
+            $table->string('status');
+            $table->tinyinteger('is_wifi');
+            $table->tinyinteger('is_gated');
+            $table->tinyinteger('is_furnished');
+            $table->tinyinteger('is_parking');
+            $table->tinyinteger('is_pool');
+            $table->tinyinteger('is_gym');
+            $table->tinyinteger('is_security');
             $table->timestamps();
         });
     }

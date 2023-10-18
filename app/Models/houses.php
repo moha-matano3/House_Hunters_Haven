@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,11 +18,11 @@ class houses extends Model
         'size',
         'bedrooms',
         'amenities',
-        'location',
         'price',
+        'user_code',
     ];
 
     public function users(){
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(User::class);
     }
 }

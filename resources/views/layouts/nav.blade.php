@@ -184,10 +184,5 @@
             </div>
         </ul>
     </nav>
-
-    <div>
-    <img src="{{URL('images/best.jpg')}}" alt="" width="100%" height="100%">
-    </div>
-    
 </body>
 </html>

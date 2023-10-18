@@ -1,7 +1,7 @@
-@extends('layouts.app') <!-- Assuming you have a layout file -->
+@extends('layouts.app')
 
 @section('styles')
-<style>
+    <style>
     .house-tile {
         border: 1px solid #ddd;
         padding: 15px;
@@ -29,11 +29,10 @@
 </style>
 @endsection
 
+
 @section('content')
 <div class="container"> 
-    <a href="{{ route('adverts.create') }}" class="btn btn-primary"><button>Add House</button></a>
     <h2>Houses</h2>
-
     <div class="row">
         @if(count($houses)>0)
         @foreach($houses as $house)
@@ -47,14 +46,6 @@
                 <p>Size: {{ $house->size }} sqft</p>
                 <p>Status: {{ $house->status }} </p>
                 <p>Price: {{ $house->price }} ksh</p>
-                <div class="house-actions">
-                    <a href="{{ route('adverts.edit', $house->id) }}" class="btn btn-info"><button>Edit</button></a>
-                    <form action="{{ route('adverts.destroy', $house->id) }}" method="POST" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this house?')">Delete</button>
-                    </form>
-                </div>
             </div>
         </div>
         @endforeach
@@ -64,6 +55,3 @@
     </div>
 </div>
 @endsection
-
-
-

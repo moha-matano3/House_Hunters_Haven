@@ -14,7 +14,7 @@ class IndexController extends Controller
             ->orWhere('location', 'LIKE', '%' . $query . '%')
             ->orderBy('id','DESC')->paginate(5);
     
-    return view('dashboard.houses.index', compact('houses'));
+    return view('dashboard.listings', compact('houses'));
 }
 
 
@@ -42,7 +42,7 @@ public function filter(Request $request)
     $houses = $query->get();
 
 
-    return view('dashboard.houses.index', ['houses' => $houses]);
+    return view('dashboard.listings', ['houses' => $houses]);
 }
 
 
