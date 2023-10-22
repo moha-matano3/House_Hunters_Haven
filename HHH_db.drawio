@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-22T21:37:16.167Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" etag="p22bgBEg_UpYGFcn4b_u" version="22.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-22T21:40:15.082Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" etag="r59t_hmj1wG8ejAsP6Mu" version="22.0.6" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="954" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -7,13 +7,13 @@
         <mxCell id="PkmYTVWjFRIUk0D2hP3R-5" value="Users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="120" y="200" width="160" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="PkmYTVWjFRIUk0D2hP3R-6" value="User_ID&lt;br&gt;User image&lt;br&gt;identification&lt;br&gt;firstname&lt;br&gt;telephone&lt;br&gt;&amp;nbsp;username&lt;br&gt;email&lt;br&gt;password&lt;br&gt;User_code&lt;br&gt;&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="PkmYTVWjFRIUk0D2hP3R-5" vertex="1">
+        <mxCell id="PkmYTVWjFRIUk0D2hP3R-6" value="User_ID (PK)&lt;br&gt;User image&lt;br&gt;identification (Unique key)&lt;br&gt;firstname&lt;br&gt;telephone&lt;br&gt;&amp;nbsp;username&lt;br&gt;email (Unique key)&lt;br&gt;password&lt;br&gt;User_code (PK)&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="PkmYTVWjFRIUk0D2hP3R-5" vertex="1">
           <mxGeometry y="50" width="160" height="150" as="geometry" />
         </mxCell>
         <mxCell id="PkmYTVWjFRIUk0D2hP3R-14" value="Houses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="310" width="150" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="PkmYTVWjFRIUk0D2hP3R-15" value="house_ID&lt;br&gt;house image&lt;br&gt;house name&lt;br&gt;size&lt;br&gt;bedrooms&lt;br&gt;town&lt;br&gt;county&lt;br&gt;status&lt;br&gt;amenities&lt;br&gt;User_code&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="PkmYTVWjFRIUk0D2hP3R-14" vertex="1">
+        <mxCell id="PkmYTVWjFRIUk0D2hP3R-15" value="house_ID (PK)&lt;br&gt;house image&lt;br&gt;house name&lt;br&gt;size&lt;br&gt;bedrooms&lt;br&gt;town&lt;br&gt;county&lt;br&gt;status&lt;br&gt;amenities&lt;br&gt;User_code (Foreign key)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="PkmYTVWjFRIUk0D2hP3R-14" vertex="1">
           <mxGeometry y="50" width="150" height="150" as="geometry" />
         </mxCell>
         <mxCell id="LjbM7ltP2arIgjlti8oD-1" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.02;entryY=0.145;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.125;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="PkmYTVWjFRIUk0D2hP3R-5" target="PkmYTVWjFRIUk0D2hP3R-14">
